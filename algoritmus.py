@@ -4,7 +4,7 @@ from math import sqrt, floor
 def getprimes(numbers):
     primes = []
     for number in numbers:
-        if number > 0:
+        if number > 1:
             divisors = []  # seznam dělitelů
             maxdivisor = floor(
                 sqrt(number)
@@ -16,8 +16,4 @@ def getprimes(numbers):
             if len(divisors) == 0:
                 primes.append(number)
 
-    return primes
-
-
-numbers = [1, 5, 7, 4, 5, 8, 6, 280, 3, 10]
-print(getprimes(numbers))
+    return sorted(primes)
