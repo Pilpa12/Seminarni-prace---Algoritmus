@@ -4,7 +4,7 @@ import csv
 
 primeslist = []
 
-primes_to_200 = open("primes.csv")
+primes_to_200 = open("first_200_primes.csv")
 reader = csv.reader(primes_to_200)
 for line in reader:
     for element in line:

@@ -3,39 +3,42 @@ from timeit import repeat
 import lists
 
 best_data = {
-    "1.": lists.primes1even,
-    "2.": lists.primes2even,
-    "3.": lists.primes3even,
-    "4.": lists.primes4even,
-    "5.": lists.primes5even,
-    "6.": lists.primes6even,
-    "7.": lists.primes7even,
-    "8.": lists.primes8even,
-    "9.": lists.primes9even
+    "1. ": lists.even0,
+    "2. ": lists.even1,
+    "3. ": lists.even2,
+    "4. ": lists.even3,
+    "5. ": lists.even4,
+    "6. ": lists.even5,
+    "7. ": lists.even6,
+    "8. ": lists.even7,
+    "9. ": lists.even8,
+    "10.": lists.even9
 }
 
 worst_data = {
-    "1.": lists.primes1,
-    "2.": lists.primes2,
-    "3.": lists.primes3,
-    "4.": lists.primes4,
-    "5.": lists.primes5,
-    "6.": lists.primes6,
-    "7.": lists.primes7,
-    "8.": lists.primes8,
-    "9.": lists.primes9
+    "1. ": lists.primes0,
+    "2. ": lists.primes1,
+    "3. ": lists.primes2,
+    "4. ": lists.primes3,
+    "5. ": lists.primes4,
+    "6. ": lists.primes5,
+    "7. ": lists.primes6,
+    "8. ": lists.primes7,
+    "9. ": lists.primes8,
+    "10.": lists.primes9
 }
 
 average_data = {
-    "1.": lists.nums1,
-    "2.": lists.nums2,
-    "3.": lists.nums3,
-    "4.": lists.nums4,
-    "5.": lists.nums5,
-    "6.": lists.nums6,
-    "7.": lists.nums7,
-    "8.": lists.nums8,
-    "9.": lists.nums9
+    "1. ": lists.avg0,
+    "2. ": lists.avg1,
+    "3. ": lists.avg2,
+    "4. ": lists.avg3,
+    "5. ": lists.avg4,
+    "6. ": lists.avg5,
+    "7. ": lists.avg6,
+    "8. ": lists.avg7,
+    "9. ": lists.avg8,
+    "10.": lists.avg9
 }
 
 
@@ -43,7 +46,7 @@ def benchmark_function(function, test_data):
     print(f" Benchmarking function {function.__name__}\n", "-"*31)
     for key, value in test_data.items():
         command = f"{function.__name__}({value})"
-        time = min(repeat(command, number=1, repeat=1, globals=globals()))
+        time = min(repeat(command, number=1, repeat=10, globals=globals()))
         print(f" - {key}: {time:.7f} s", end="\n")
     print()
 
