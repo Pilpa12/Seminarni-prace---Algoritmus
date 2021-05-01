@@ -1,19 +1,6 @@
 from algoritmus import getprimes
 from timeit import repeat
-import lists
-
-best_data = {
-    "1. ": lists.even0,
-    "2. ": lists.even1,
-    "3. ": lists.even2,
-    "4. ": lists.even3,
-    "5. ": lists.even4,
-    "6. ": lists.even5,
-    "7. ": lists.even6,
-    "8. ": lists.even7,
-    "9. ": lists.even8,
-    "10.": lists.even9
-}
+import lists  # obsahuje všechny seznamy pro testování
 
 worst_data = {
     "1. ": lists.primes0,
@@ -26,7 +13,20 @@ worst_data = {
     "8. ": lists.primes7,
     "9. ": lists.primes8,
     "10.": lists.primes9
-}
+}  # data pro nejhorší časovou složitost - pouze prvočísla
+
+best_data = {
+    "1. ": lists.even0,
+    "2. ": lists.even1,
+    "3. ": lists.even2,
+    "4. ": lists.even3,
+    "5. ": lists.even4,
+    "6. ": lists.even5,
+    "7. ": lists.even6,
+    "8. ": lists.even7,
+    "9. ": lists.even8,
+    "10.": lists.even9
+}  # data pro nejlepší časovou složitost - sudá čísla
 
 average_data = {
     "1. ": lists.avg0,
@@ -39,7 +39,9 @@ average_data = {
     "8. ": lists.avg7,
     "9. ": lists.avg8,
     "10.": lists.avg9
-}
+}  # data pro průměrnou časovou složitost - náhodná čísla
+
+# Všechny seznamy mají stejný počet prvků - 2000
 
 
 def benchmark_function(function, test_data):
